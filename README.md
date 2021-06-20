@@ -68,3 +68,34 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# Project Name: Can of Books
+
+**Author**: Abdalrhman Banyissa
+**Version**: 1.0.0
+
+## Overview
+
+Wep application uses auth0 library in order to create login page using google account and render the information the account like name, email, photos, ... etc.
+
+## Getting Started
+
+## Architecture
+
+## Change Log
+
+## Credit and Collaborations
+
+Credit: AliShiyyab
+Collaborator : Abdalrhman Banyissa
+
+# Time Estimates
+
+Name of feature: lab11 - Can of Books
+
+Estimate of time needed to complete: 3 hours
+
+Start time: 2 pm
+
+Finish time: 4 pm
+Actual time needed to complete: 2 hours
