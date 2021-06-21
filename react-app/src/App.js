@@ -4,12 +4,8 @@ import Footer from './Footer';
 import MyFavoriteBooks from './MyFavoriteBooks';
 import Login from './Login';
 import Profile from './Profile';
-/*import {
-  BrowserRouter as Router,
-  Switch,
-  Route
-}from "react-router-dom";
- */
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import {withAuth0} from '@auth0/auth0-react';
 
 import {
