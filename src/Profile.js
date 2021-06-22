@@ -1,19 +1,22 @@
-  
-import React from 'react';
-import { useAuth0 } from '@auth0/auth0-react';
+import React, { Component } from 'react';
+import { withAuth0 } from '@auth0/auth0-react';
 
-function Profile() {
-  const { user, isAuthenticated } = useAuth0();
+class Profile extends Component {
+    render() {
+        const {user,isAuthenticated} = this.props.auth0;
+        return (
+            <>
+                { isAuthenticated &&
+                    <>
+                      <p>Hello {user.name}</p>
+                      <p>Email : {user.email}</p>
+                      <img src={user.picture} alt='IMgG'/>
+                    </>
 
-  return <div>{
-    isAuthenticated &&
-    <>
-    <img src={user.picture} alt="img"/>
-    <div>Hello {user.name}</div>
-    <div>Email: {user.email}</div>
-    </>
+                }
+            </>
+        );
     }
-    </div>;
 }
 
-export default Profile;
+export default withAuth0(Profile);
