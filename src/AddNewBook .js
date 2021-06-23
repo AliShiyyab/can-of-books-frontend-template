@@ -8,13 +8,13 @@ class AddNewBook extends React.Component{
     event.preventDefault();
     const queryParams = {
       params:{
-      bookName:event.target.bookName.value,
-      description:event.target.description.value , 
-      status:event.target.status.value,
+      bookName: event.target.bookName.value,
+      description: event.target.description.value , 
+      status: event.target.status.value,
       }
     }
     console.log(queryParams);
-    const postBook = await axios.get(`${process.env.REACT_APP}/savebook` , queryParams);
+    const postBook = await axios.get(`http://localhost:3002/savebook` , queryParams);
     console.log(postBook.status);
   }
   render(){

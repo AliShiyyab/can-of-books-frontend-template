@@ -5,16 +5,16 @@ class Profile extends Component {
     render() {
         const {user,isAuthenticated} = this.props.auth0;
         return (
-            <>
+            <div>
                 { isAuthenticated &&
-                    <>
-                      <p>Hello {user.name}</p>
-                      <p>Email : {user.email}</p>
-                      <img src={user.picture} alt='IMgG'/>
-                    </>
+                    <div>
+                        <img src={user.picture} alt='IMgG'/>
+                        <p>Hello {user.name}</p>
+                        <p>Email : {user.email}</p>
+                    </div>
 
                 }
-            </>
+            </div>
         );
     }
 }
