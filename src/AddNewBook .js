@@ -14,7 +14,7 @@ class AddNewBook extends React.Component{
       }
     }
     console.log(queryParams);
-    const postBook = await axios.get(`http://localhost:3002/savebook` , queryParams);
+    const postBook = await axios.get(`${process.env.REACT_APP_HOST}/savebook` , queryParams);
     console.log(postBook.status);
   }
   render(){

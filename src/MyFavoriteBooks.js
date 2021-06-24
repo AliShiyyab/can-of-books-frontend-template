@@ -23,7 +23,7 @@ class MyFavoriteBooks extends React.Component {
 
   async componentDidMount() {
     const email = this.props.auth0.user.email;
-    const booksReq = await axios.get(`http://localhost:3002/books?email=${email}`);
+    const booksReq = await axios.get(`${process.env.REACT_APP_HOST}/books?email=${email}`);
     console.log('test', booksReq.data);
     await this.setState({ books: booksReq.data });
   }
@@ -35,7 +35,7 @@ class MyFavoriteBooks extends React.Component {
       description: event.target.description.value,
       email: this.props.auth0.user.email,
     }
-    const postBook = await axios.post(`http://localhost:3002/books`, bookData);
+    const postBook = await axios.post(`${process.env.REACT_APP_HOST}/books`, bookData);
     await this.setState({ books: postBook.data.books })
     console.log('the data from post request', postBook.data.books);
   }
@@ -45,7 +45,7 @@ class MyFavoriteBooks extends React.Component {
     const query = {
       email: this.props.auth0.user.email,
     }
-    const filteredBooks = await axios.delete(`http://localhost:3002/books/${id}`, { params: query });
+    const filteredBooks = await axios.delete(`${process.env.REACT_APP_HOST}/books/${id}`, { params: query });
     console.log('books after deletion', filteredBooks);
     await this.setState({ books: filteredBooks.data });
   }
@@ -75,7 +75,7 @@ class MyFavoriteBooks extends React.Component {
       bookDescription: bookDescription,
       email: this.props.auth0.user.email,
     }
-    const updatedBooks = await axios.put(`http://localhost:3002/books/${index}`, reqBody);
+    const updatedBooks = await axios.put(`${process.env.REACT_APP_HOST}/${index}`, reqBody);
     console.log('updated books', updatedBooks);
     await this.setState({ books: updatedBooks.data });
   }
