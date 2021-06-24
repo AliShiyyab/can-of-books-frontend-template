@@ -1,33 +1,31 @@
 import React from 'react';
-//bootstrap component
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
-//css files
 
-class Books extends React.Component{
-  render(){
-    const val = this.props.books;
-    let items = val.map((book , index) => {
+class Books extends React.Component {
+  render() {
+    const items = this.props.books.map((book, index) => {
       return (
-              <Card key={index}>
-                <Card.Img src='https://www.econlib.org/wp-content/uploads/2020/10/stack-of-books-200x300.jpg' alt='' />
-                <Card.Body>
-                  <Card.Text>
-                    <h3>Book Name :  {book.name}</h3>
-                  </Card.Text>
-                  <Card.Text>
-                    Book Description : {book.description}                    
-                  </Card.Text>
-                </Card.Body>
-                <Card.Footer>
-                  <Button Click={() => this.props.deleteBook(index)}>Delete</Button>
-                </Card.Footer>
-              </Card>
+        <Card key={index}>
+          <Card.Img src='https://www.stylist.co.uk/images/app/uploads/2019/12/17162852/the-end-of-a-book-1268x845.jpeg?w=1200&h=1&fit=max&auto=format%2Ccompress' alt='Books IMG' />
+          <Card.Body>
+            <Card.Text>
+              <h3>Book Name :  {book.name}</h3>
+            </Card.Text>
+            <Card.Text>
+              Book Description : {book.description}
+            </Card.Text>
+          </Card.Body>
+          <Card.Footer>
+            <Button onClick={() => this.props.deleteBook(index)}>Delete</Button>
+            <Button onClick={() => this.props.handleShowUpdateForm(index)} style={{ marginLeft: '3rem' }}>Update</Button>
+          </Card.Footer>
+        </Card>
       )
-})
+    })
 
-    return(
+    return (
       <Row >
         {items}
       </Row>
@@ -35,4 +33,4 @@ class Books extends React.Component{
   }
 }
 
-export default Books ;
+export default Books;
